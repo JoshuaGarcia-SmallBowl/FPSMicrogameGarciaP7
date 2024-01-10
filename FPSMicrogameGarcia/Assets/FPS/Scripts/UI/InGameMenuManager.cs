@@ -58,6 +58,8 @@ namespace Unity.FPS.UI
 
             FramerateToggle.isOn = m_FramerateCounter.UIText.gameObject.activeSelf;
             FramerateToggle.onValueChanged.AddListener(OnFramerateCounterChanged);
+
+            m_PlayerInputsHandler.LookSensitivity = 3;
         }
 
         void Update()
@@ -129,6 +131,7 @@ namespace Unity.FPS.UI
         void OnMouseSensitivityChanged(float newValue)
         {
             m_PlayerInputsHandler.LookSensitivity = newValue;
+            //Debug.Log(newValue);
         }
 
         void OnShadowsChanged(bool newValue)
